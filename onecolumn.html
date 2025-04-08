@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Column Layout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
+    }
+    .back-button {
+      display: inline-block;
+      margin: 2rem;
+      padding: 0.5rem 1rem;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .back-button:hover {
+      background: #4338ca;
+      transform: translateY(-2px);
+    }
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    h1 {
+      color: #1e3a8a;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+    }
+    h2 {
+      color: #1e40af;
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .article-container {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">← Back to All Layouts</a>
+
+  <div class="article-container">
+    <h1>The Power of Single Column Layouts</h1>
+    <p>This clean, focused approach puts content first by eliminating distractions and creating a natural reading flow.</p>
+    
+    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Reading content">
+    
+    <h2>Why It Works</h2>
+    <p>The single column format matches how we naturally read - from top to bottom. This makes it ideal for long-form content like articles, blog posts, and documentation.</p>
+    
+    <h2>Mobile First</h2>
+    <p>With no complex grids to rearrange, one-column layouts adapt perfectly to all screen sizes without requiring major structural changes.</p>
+  </div>
+</body>
+</html>

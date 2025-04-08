@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F-Layout Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      padding: 2rem;
+      color: #333;
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    .back-button:hover {
+      transform: translateY(-2px);
+    }
+    .f-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    /* F-Pattern Visualization */
+    .f-header {
+      background: #1e3a8a;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .f-main {
+      display: flex;
+    }
+    .f-content {
+      width: 70%;
+      padding: 2rem;
+    }
+    .f-sidebar {
+      width: 30%;
+      padding: 2rem;
+      background: #f0f2f5;
+      border-left: 1px solid #e5e7eb;
+    }
+    .article {
+      margin-bottom: 3rem;
+    }
+    .article h2 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+    .article p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hotspot {
+      position: absolute;
+      background: rgba(239, 68, 68, 0.2);
+      border: 2px dashed #ef4444;
+    }
+    .hotspot-label {
+      position: absolute;
+      background: #ef4444;
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .f-main {
+        flex-direction: column;
+      }
+      .f-content, .f-sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="f-container">
+    <a href="index.html" class="back-button">← Back to All Layouts</a>
+
+    <!-- F-Pattern Visualization -->
+    <div class="f-header">
+      <h1>F-Layout Pattern</h1>
+      <p>Users typically scan content in an "F" shape</p>
+    </div>
+
+    <div class="f-main">
+      <div class="f-content">
+        <!-- Hotspot 1: First horizontal scan -->
+        <div class="hotspot" style="width: 100%; height: 50px; top: 120px;"></div>
+        <div class="hotspot-label" style="top: 170px; left: 20px;">1. First horizontal scan</div>
+
+        <div class="article">
+          <h2>Most Important Content</h2>
+          <p>This is where users' eyes land first. Place your primary headline and key information here.</p>
+        </div>
+
+        <!-- Hotspot 2: Second horizontal scan -->
+        <div class="hotspot" style="width: 60%; height: 40px; top: 300px;"></div>
+        <div class="hotspot-label" style="top: 340px; left: 20px;">2. Second horizontal scan</div>
+
+        <div class="article">
+          <h2>Secondary Information</h2>
+          <p>Users scan horizontally again, but with less coverage than the first line.</p>
+        </div>
+
+        <!-- Hotspot 3: Vertical scan -->
+        <div class="hotspot" style="width: 30%; height: 300px; top: 400px;"></div>
+        <div class="hotspot-label" style="top: 700px; left: 20px;">3. Vertical scan</div>
+
+        <div class="article">
+          <h2>Additional Details</h2>
+          <p>Users then scan vertically down the left side of the content, forming the stem of the "F".</p>
+          <p>This is why bullet points and subheadings work well in this area.</p>
+        </div>
+      </div>
+
+      <div class="f-sidebar">
+        <h3>Sidebar Content</h3>
+        <p>Less important information goes here. Users typically ignore this area during initial scanning.</p>
+        <ul style="margin-top: 1rem; padding-left: 1.2rem;">
+          <li>Related links</li>
+          <li>Secondary navigation</li>
+          <li>Ads or promotions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple animation to highlight F-pattern
+    document.addEventListener('DOMContentLoaded', function() {
+      const hotspots = document.querySelectorAll('.hotspot');
+      hotspots.forEach((hotspot, index) => {
+        setTimeout(() => {
+          hotspot.style.transition = 'all 0.5s';
+          hotspot.style.opacity = '0.5';
+          setTimeout(() => {
+            hotspot.style.opacity = '0.2';
+          }, 1000);
+        }, index * 800);
+      });
+    });
+  </script>
+</body>
+</html>

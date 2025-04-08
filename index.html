@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webpage Layouts Explained</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .layouts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .layout-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    h2 a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+
+    h2 a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #1f2937;
+      color: #f9fafb;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .example {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .example a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .example a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Webpage Layouts Explained</h1>
+    <p>Explore common website layout types with usage, pros/cons, and real examples</p>
+    <p>"Click the layout's title for preview"</p>
+  </header>
+
+  <main>
+    <div class="layouts-grid">
+      <section class="layout-card">
+        <h2><a href="zigzag.html">Zig-Zag Layout</a></h2>
+        <p><strong>How it works:</strong> Alternating text and image sections placed diagonally to guide the user’s eyes in a Z-pattern.</p>
+        <p><strong>Usage:</strong> Storytelling, Landing Pages</p>
+        <ul>
+          <li><strong>Pros:</strong> Natural eye flow, engaging</li>
+          <li><strong>Cons:</strong> Hard to adapt on mobile</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://www.microsoft.com/en-GB/surface" target="_blank">Microsoft</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="f-pattern.html">F Layout</a></h2>
+        <p><strong>How it works:</strong> Mimics how people read—scanning the top and left side of the page, forming an F shape.</p>
+        <p><strong>Usage:</strong> Blogs, News Websites</p>
+        <ul>
+          <li><strong>Pros:</strong> User-friendly, content focused</li>
+          <li><strong>Cons:</strong> Not visually exciting</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://thehimalayantimes.com/" target="_blank">The Himalayan Times</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="full-screen.html">Full Screen Photo</a></h2>
+        <p><strong>How it works:</strong> A large background image covers the entire screen with minimal text overlaid for focus.</p>
+        <p><strong>Usage:</strong> Portfolios, Product Showcases</p>
+        <ul>
+          <li><strong>Pros:</strong> Strong first impression</li>
+          <li><strong>Cons:</strong> Slow load, content limitation</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://www.thamel.com/" target="_blank">Thamel</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="onecolumn.html">One-Column Layout</a></h2>
+        <p><strong>How it works:</strong> All content is stacked vertically in one column for smooth vertical scrolling and easy reading.</p>
+        <p><strong>Usage:</strong> Blogs, Articles</p>
+        <ul>
+          <li><strong>Pros:</strong> Simple, mobile-friendly</li>
+          <li><strong>Cons:</strong> Long scrolling</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://medium.com" target="_blank">Medium</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="featured-image..html">Featured Image Layout</a></h2>
+        <p><strong>How it works:</strong> A large featured image appears above or beside the content to attract attention and set context.</p>
+        <p><strong>Usage:</strong> Blogs, News Articles</p>
+        <ul>
+          <li><strong>Pros:</strong> Eye-catching, story support</li>
+          <li><strong>Cons:</strong> Relies on good images</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://kathmandupost.com/" target="_blank">Kathmandu Post</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="asymmetrical.html">Asymmetrical Layout</a></h2>
+        <p><strong>How it works:</strong> Uneven layout of elements with intentional imbalance for an artistic, unique feel.</p>
+        <p><strong>Usage:</strong> Portfolios, Creative Sites</p>
+        <ul>
+          <li><strong>Pros:</strong> Unique, modern look</li>
+          <li><strong>Cons:</strong> Can feel unbalanced</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://tobiasahlin.com/" target="_blank">PortFolio</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="split-screen.html">Split Screen Layout</a></h2>
+        <p><strong>How it works:</strong> Divides the screen into two sections, allowing for two focal points like dual CTAs or options.</p>
+        <p><strong>Usage:</strong> Dual CTA, Service Selection</p>
+        <ul>
+          <li><strong>Pros:</strong> Equal focus, clean</li>
+          <li><strong>Cons:</strong> Tough on mobile</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://www.educated--guess.com/" target="_blank">Educated Guess</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="h&l.html">Headline and Thumbnails</a></h2>
+        <p><strong>How it works:</strong> A large headline with smaller thumbnail images arranged below for quick navigation.</p>
+        <p><strong>Usage:</strong> Newsfeeds, Video Sites</p>
+        <ul>
+          <li><strong>Pros:</strong> Quick navigation</li>
+          <li><strong>Cons:</strong> Can look cluttered</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://techsansar.com/" target="_blank">Tech Sansar</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="gallery.html">Gallery Layout (Modular)</a></h2>
+        <p><strong>How it works:</strong> A grid of images or blocks that creates a visual gallery of items or posts.</p>
+        <p><strong>Usage:</strong> Photography, Portfolios</p>
+        <ul>
+          <li><strong>Pros:</strong> Aesthetic, easy scanning</li>
+          <li><strong>Cons:</strong> Can feel crowded</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://www.behance.net/" target="_blank">Behance</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="card.html">Card / Block Layout</a></h2>
+        <p><strong>How it works:</strong> Modular, card-based structure where content is broken into individual blocks for easy scanning.</p>
+        <p><strong>Usage:</strong> Product listings, Dashboards</p>
+        <ul>
+          <li><strong>Pros:</strong> Organized, modular</li>
+          <li><strong>Cons:</strong> Can get repetitive</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="magazine.html">Magazine Layout</a></h2>
+        <p><strong>How it works:</strong> A grid-like structure with multiple columns that can handle rich, varied content.</p>
+        <p><strong>Usage:</strong> Editorials, News Sites</p>
+        <ul>
+          <li><strong>Pros:</strong> Handles rich content</li>
+          <li><strong>Cons:</strong> Complex layout</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://www.himalmag.com/" target="_blank">Himalmag</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="single.html">Single Page Layout</a></h2>
+        <p><strong>How it works:</strong> A single page layout with smooth scrolling, often used for portfolios or startups.</p>
+        <p><strong>Usage:</strong> Portfolios, Startups</p>
+        <ul>
+          <li><strong>Pros:</strong> Simple, smooth scroll</li>
+          <li><strong>Cons:</strong> SEO & load issues</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://heykuba.com/" target="_blank">Hey Kuba</a></p>
+      </section>
+
+      <section class="layout-card">
+        <h2><a href="radial.html">Radial Symmetry Layout</a></h2>
+        <p><strong>How it works:</strong> Uses radial or circular designs to arrange content in a visually dynamic way.</p>
+        <p><strong>Usage:</strong> Artistic, Brand Landing</p>
+        <ul>
+          <li><strong>Pros:</strong> Creative, eye-catching</li>
+          <li><strong>Cons:</strong> Hard to execute, niche use</li>
+        </ul>
+        <p class="example">🔗 Example: <a href="https://resn.co.nz/" target="_blank">Resn</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+</html>

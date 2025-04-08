@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split Screen Layout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      overflow: hidden;
+    }
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s;
+    }
+    .back-button:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    .split-container {
+      display: flex;
+      height: 100vh;
+    }
+    .half {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: white;
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .half:hover {
+      width: 60%;
+    }
+    .half:not(:hover) {
+      width: 40%;
+    }
+    .left {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    }
+    .right {
+      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    }
+    .half-content {
+      max-width: 400px;
+      text-align: center;
+      z-index: 2;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .cta {
+      display: inline-block;
+      padding: 12px 30px;
+      background: white;
+      color: #333;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .left .cta {
+      color: #4f46e5;
+    }
+    .right .cta {
+      color: #10b981;
+    }
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .split-container {
+        flex-direction: column;
+      }
+      .half {
+        width: 100% !important;
+        height: 50vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">← Back to All Layouts</a>
+
+  <div class="split-container">
+    <div class="half left">
+      <div class="half-content">
+        <h1>Option A</h1>
+        <p>Perfect for presenting two distinct choices with equal importance.</p>
+        <a href="#" class="cta">Choose This</a>
+      </div>
+    </div>
+    <div class="half right">
+      <div class="half-content">
+        <h1>Option B</h1>
+        <p>The split creates visual balance while allowing each side to have its own identity.</p>
+        <a href="#" class="cta">Choose This</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

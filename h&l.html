@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headline and Thumbnails Layout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      padding: 2rem;
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .back-button:hover {
+      background: #4338ca;
+      transform: translateY(-2px);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    h1 {
+      color: #1e3a8a;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .subtitle {
+      color: #6b7280;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .thumbnails-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .thumbnail-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+    .thumbnail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+    .thumbnail-img {
+      height: 180px;
+      overflow: hidden;
+    }
+    .thumbnail-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .thumbnail-card:hover .thumbnail-img img {
+      transform: scale(1.05);
+    }
+    .thumbnail-content {
+      padding: 1.5rem;
+    }
+    .thumbnail-title {
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .thumbnail-excerpt {
+      color: #6b7280;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .view-all {
+      display: block;
+      text-align: center;
+      margin-top: 3rem;
+      color: #4f46e5;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .view-all:hover {
+      color: #4338ca;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">← Back to All Layouts</a>
+
+  <div class="container">
+    <div class="section-header">
+      <h1>Latest News & Updates</h1>
+      <p class="subtitle">Browse our most recent articles and stories</p>
+    </div>
+
+    <div class="thumbnails-grid">
+      <div class="thumbnail-card">
+        <div class="thumbnail-img">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="News 1">
+        </div>
+        <div class="thumbnail-content">
+          <h3 class="thumbnail-title">Understanding Web Layout Principles</h3>
+          <p class="thumbnail-excerpt">Learn how effective layouts improve user experience and engagement.</p>
+        </div>
+      </div>
+
+      <div class="thumbnail-card">
+        <div class="thumbnail-img">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="News 2">
+        </div>
+        <div class="thumbnail-content">
+          <h3 class="thumbnail-title">Mobile-First Design Strategies</h3>
+          <p class="thumbnail-excerpt">Why designing for mobile first leads to better products.</p>
+        </div>
+      </div>
+
+      <div class="thumbnail-card">
+        <div class="thumbnail-img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="News 3">
+        </div>
+        <div class="thumbnail-content">
+          <h3 class="thumbnail-title">The Future of CSS Layouts</h3>
+          <p class="thumbnail-excerpt">Exploring new CSS features that will change how we design.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="view-all">View All Articles →</a>
+  </div>
+</body>
+</html>

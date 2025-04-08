@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine Layout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .back-button:hover {
+      background: rgba(0,0,0,0.9);
+      transform: translateY(-2px);
+    }
+    .magazine-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .magazine-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .magazine-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .magazine-header p {
+      font-family: 'Poppins', sans-serif;
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .magazine-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+    .featured-article {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .featured-img {
+      height: 500px;
+      overflow: hidden;
+    }
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .featured-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 3rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+    }
+    .featured-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .featured-content p {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+    .read-more {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: white;
+      color: #1e3a8a;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .read-more:hover {
+      background: #f3f4f6;
+      transform: translateY(-2px);
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .sidebar-article {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .sidebar-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .sidebar-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .sidebar-content {
+      padding: 1.5rem;
+    }
+    .sidebar-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #1e3a8a;
+    }
+    .sidebar-content p {
+      font-family: 'Poppins', sans-serif;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .article-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .grid-article {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .grid-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .grid-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .grid-content {
+      padding: 1.5rem;
+    }
+    .grid-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #1e3a8a;
+    }
+    .grid-content p {
+      font-family: 'Poppins', sans-serif;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 1024px) {
+      .magazine-grid {
+        grid-template-columns: 1fr;
+      }
+      .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .magazine-header h1 {
+        font-size: 2.5rem;
+      }
+      .featured-content h2 {
+        font-size: 2rem;
+      }
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">← Back to All Layouts</a>
+
+  <div class="magazine-container">
+    <div class="magazine-header">
+      <h1>The Modern Design Journal</h1>
+      <p>Exploring the latest trends in web design and digital experiences</p>
+    </div>
+
+    <div class="magazine-grid">
+      <div class="featured-article">
+        <div class="featured-img">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Featured">
+        </div>
+        <div class="featured-content">
+          <h2>The Future of Web Layouts</h2>
+          <p>How emerging technologies are changing the way we design for the web, with insights from industry leaders.</p>
+          <a href="#" class="read-more">Read Full Story</a>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-article">
+          <div class="sidebar-img">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Article 1">
+          </div>
+          <div class="sidebar-content">
+            <h3>Mobile-First Strategies</h3>
+            <p>Why designing for mobile first leads to better user experiences across all devices.</p>
+            <div class="article-meta">
+              <span>By Sarah Johnson</span>
+              <span>May 15</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-article">
+          <div class="sidebar-img">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Article 2">
+          </div>
+          <div class="sidebar-content">
+            <h3>Typography Trends 2023</h3>
+            <p>Exploring the typefaces and text treatments dominating modern design.</p>
+            <div class="article-meta">
+              <span>By Michael Chen</span>
+              <span>May 10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-grid">
+        <div class="grid-article">
+          <div class="grid-img">
+            <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Article 3">
+          </div>
+          <div class="grid-content">
+            <h3>Color Psychology</h3>
+            <p>How color choices affect user perception and behavior.</p>
+            <div class="article-meta">
+              <span>By Emma Rodriguez</span>
+              <span>May 5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-article">
+          <div class="grid-img">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Article 4">
+          </div>
+          <div class="grid-content">
+            <h3>Microinteractions</h3>
+            <p>The small details that make big differences in user experience.</p>
+            <div class="article-meta">
+              <span>By David Kim</span>
+              <span>April 28</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-article">
+          <div class="grid-img">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Article 5">
+          </div>
+          <div class="grid-content">
+            <h3>Accessibility First</h3>
+            <p>Designing experiences that work for everyone.</p>
+            <div class="article-meta">
+              <span>By Lisa Wong</span>
+              <span>April 22</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

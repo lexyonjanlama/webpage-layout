@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zig-Zag Layout Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      padding: 2rem;
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    .back-button:hover {
+      transform: translateY(-2px);
+    }
+    .zigzag-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .zigzag-item {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .zigzag-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .zigzag-img {
+      width: 50%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .zigzag-img:hover {
+      transform: scale(1.02);
+    }
+    .zigzag-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .zigzag-content {
+      width: 50%;
+      padding: 1rem;
+    }
+    .zigzag-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 768px) {
+      .zigzag-item, .zigzag-item:nth-child(even) {
+        flex-direction: column;
+      }
+      .zigzag-img, .zigzag-content {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="zigzag-container">
+    <a href="index.html" class="back-button">← Back to All Layouts</a>
+
+    <!-- Demo Content -->
+    <div class="zigzag-item">
+      <div class="zigzag-img">
+        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2Vic2l0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Web Design">
+      </div>
+      <div class="zigzag-content">
+        <h2>Engaging Visual Flow</h2>
+        <p>The zig-zag pattern naturally guides the user's eyes down the page, alternating between text and visuals for better engagement.</p>
+      </div>
+    </div>
+
+    <div class="zigzag-item">
+      <div class="zigzag-img">
+        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9iaWxlJTIwZGV2aWNlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Mobile Responsive">
+      </div>
+      <div class="zigzag-content">
+        <h2>Mobile-Friendly</h2>
+        <p>On smaller screens, the layout stacks vertically while maintaining readability and visual hierarchy.</p>
+      </div>
+    </div>
+
+    <div class="zigzag-item">
+      <div class="zigzag-img">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3Rvcnl0ZWxsaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Storytelling">
+      </div>
+      <div class="zigzag-content">
+        <h2>Perfect for Storytelling</h2>
+        <p>Ideal for product pages or case studies where you want to alternate between features and benefits.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
